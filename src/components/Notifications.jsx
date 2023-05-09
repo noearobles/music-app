@@ -1,6 +1,7 @@
 import React from "react";
 import { Delete } from "@mui/icons-material";
 import { Typography } from "@mui/material";
+import style from "../css/modules/App.module.css";
 
 export default function Notifications(props) {
   const { notifications, setNotifications } = props;

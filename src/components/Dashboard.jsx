@@ -1,6 +1,7 @@
 import React from "react";
 import { Slider, Switch, FormControl, Select, MenuItem } from "@mui/material";
 import Cards from "./Cards";
+import style from "../css/modules/App.module.css";
 
 export default function Dashboard(props) {
   const { notifications, setNotifications, events, setEvents } = props;
@@ -13,8 +14,8 @@ export default function Dashboard(props) {
 
   const eventInfo = {
     connection: "Toggle between online and offline.",
-    volume: "Toggle volume.",
-    quality: "Lower audio quality if there is audio reduction",
+    volume: "Adjust volume.",
+    quality: "Select a lower audio quality if there is audio reduction",
   };
 
   const eventMethods = {
@@ -22,7 +23,6 @@ export default function Dashboard(props) {
       <Switch
         defaultChecked
         name="connection"
-        color="secondary"
         sx={{ marginBottom: "1rem" }}
         onChange={handleConnection}
       />
@@ -34,7 +34,6 @@ export default function Dashboard(props) {
         min={0}
         max={100}
         step={10}
-        color="secondary"
         valueLabelDisplay="auto"
         onChange={handleVolume}
       />
@@ -42,7 +41,6 @@ export default function Dashboard(props) {
     quality: (
       <FormControl fullWidth>
         <Select
-          color="secondary"
           value={events.quality}
           onChange={handleQuality}
         >
@@ -103,7 +101,7 @@ export default function Dashboard(props) {
     <section>
       <audio>
         <source
-          src="http://codeskulptor-demos.commondatastorage.googleapis.com/pang/paza-moduless.mp3"
+          src="music/(Disc 2) 01 - Scarface (Push It To The Limit).mp3"
           type="audio/mpeg"
         ></source>
       </audio>

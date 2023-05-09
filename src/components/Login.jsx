@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, TextField } from "@mui/material";
-import css from "../css/modules/App.module.css";
+import style from "../css/modules/App.module.css";
 
 export default function Login(props) {
   const { setLoggedIn } = props;

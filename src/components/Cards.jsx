@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, CardContent, Typography } from "@mui/material";
+import style from "../css/modules/App.module.css";
 
 export default function Cards(props) {
   const { eventLabels, eventInfo, eventMethods } = props;
