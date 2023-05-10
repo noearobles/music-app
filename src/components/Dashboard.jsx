@@ -40,10 +40,7 @@ export default function Dashboard(props) {
     ),
     quality: (
       <FormControl fullWidth>
-        <Select
-          value={events.quality}
-          onChange={handleQuality}
-        >
+        <Select value={events.quality} onChange={handleQuality}>
           <MenuItem value={"high"}>High</MenuItem>
           <MenuItem value={"mid"}>Mid</MenuItem>
           <MenuItem value={"low"}>Low</MenuItem>
@@ -56,7 +53,7 @@ export default function Dashboard(props) {
     let alert;
 
     if (events.connection === true) {
-      alert = "Offline.";
+      alert = "Offline";
       setNotifications([...notifications, alert]);
     } else if (events.connection === false) {
       alert = "Online";
@@ -98,28 +95,28 @@ export default function Dashboard(props) {
   }
 
   return (
-    <section>
-      <audio>
-        <source
-          src="music/(Disc 2) 01 - Scarface (Push It To The Limit).mp3"
-          type="audio/mpeg"
-        ></source>
-      </audio>
-      <Cards
-        eventLabels={eventLabels.connection}
-        eventInfo={eventInfo.connection}
-        eventMethods={eventMethods.connection}
-      ></Cards>
-      <Cards
-        eventLabels={eventLabels.volume}
-        eventInfo={eventInfo.volume}
-        eventMethods={eventMethods.volume}
-      ></Cards>
-      <Cards
-        eventLabels={eventLabels.quality}
-        eventInfo={eventInfo.quality}
-        eventMethods={eventMethods.quality}
-      ></Cards>
-    </section>
+      <section className={style.dashboard}>
+        <audio>
+          <source
+            src="music/(Disc 2) 01 - Scarface (Push It To The Limit).mp3"
+            type="audio/mpeg"
+          ></source>
+        </audio>
+        <Cards
+          eventLabels={eventLabels.connection}
+          eventInfo={eventInfo.connection}
+          eventMethods={eventMethods.connection}
+        ></Cards>
+        <Cards
+          eventLabels={eventLabels.volume}
+          eventInfo={eventInfo.volume}
+          eventMethods={eventMethods.volume}
+        ></Cards>
+        <Cards
+          eventLabels={eventLabels.quality}
+          eventInfo={eventInfo.quality}
+          eventMethods={eventMethods.quality}
+        ></Cards>
+      </section>
   );
 }

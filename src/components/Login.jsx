@@ -26,43 +26,45 @@ export default function Login(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <TextField
-        fullWidth
-        required
-        variant="filled"
-        label="Username"
-        name="username"
-        placeholder="Username"
-        size="large"
-        defaultValue={credent.username || ""}
-        inputProps={{ maxLength: 20 }}
-        sx={{ marginBottom: "1rem" }}
-        onChange={handleChange}
-      />
-      <TextField
-        fullWidth
-        required
-        variant="filled"
-        type="password"
-        label="Password"
-        name="password"
-        placeholder="password"
-        size="large"
-        defaultValue={credent.password || ""}
-        inputProps={{ maxLength: 20 }}
-        sx={{ marginBottom: "1rem" }}
-        onChange={handleChange}
-      />
-      <Button
-        fullWidth
-        variant="contained"
-        type="submit"
-        size="large"
-        sx={{ background: "#3f51b4" }}
-      >
-        Login
-      </Button>
-    </form>
+    <div className={style.login}>
+      <form onSubmit={handleSubmit}>
+        <TextField
+          fullWidth
+          required
+          variant="filled"
+          label="Username"
+          name="username"
+          placeholder="Username"
+          size="large"
+          defaultValue={credent.username || ""}
+          inputProps={{ maxLength: 20 }}
+          sx={{ marginBottom: "1rem" }}
+          onChange={handleChange}
+        />
+        <TextField
+          fullWidth
+          required
+          variant="filled"
+          type="password"
+          label="Password"
+          name="password"
+          placeholder="password"
+          size="large"
+          defaultValue={credent.password || ""}
+          inputProps={{ maxLength: 20 }}
+          sx={{ marginBottom: "1rem" }}
+          onChange={handleChange}
+        />
+        <Button
+          fullWidth
+          variant="contained"
+          type="submit"
+          size="large"
+          sx={{ background: "#3f51b4" }}
+        >
+          Login
+        </Button>
+      </form>
+    </div>
   );
 }

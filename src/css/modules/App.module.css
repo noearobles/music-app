@@ -3,6 +3,48 @@
     position: sticky;
 }
 
+.login {
+display: flex;
+justify-content: center;
+padding-top: 1rem;
+}
+
 .bar {
-align-items: start;
+    align-items: start;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+.notifContainer {
+    align-self: flex-end;
+}
+
+.notifList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0%;
+}
+
+.notifList>li {
+    display: flex;
+    align-items: center;
+}
+
+.deleteButton {
+    vertical-align: middle;
+    color: blue;
+    font-size:smaller;
+}
+
+@media screen and (max-width: 768px) {
+    .dashboard {
+    display: flex;
+    flex-direction: column;
+}
 }

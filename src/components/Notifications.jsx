@@ -14,14 +14,14 @@ export default function Notifications(props) {
   }
 
   return (
-    <section>
+    <section className={style.notifContainer}>
       <Typography gutterBottom variant="h4">
         Notifications
       </Typography>
-      <ul>
+      <ul className={style.notifList}>
         {notifications.map((alert, index) => (
           <li key={index} index={index}>
-            <Delete fontSize="small" onClick={() => handleDelete(index)} />
+            <Delete className={style.deleteButton} fontSize="small" onClick={() => handleDelete(index)} />
             <Typography variant="body2" sx={{ display: "inline" }}>
               {alert}
             </Typography>
