@@ -3,7 +3,7 @@ import "./css/App.css";
 import Navbar from "./components/Navbar";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
-import Notifications from "./components/Notifications";
+// import Notifications from "./components/Notifications";
 
 interface Events {
   connection: boolean;
@@ -13,10 +13,10 @@ interface Events {
 
 function App() {
   const [loggedIn, setLoggedIn]: [boolean, Function] = React.useState(false);
-  const [notifications, setNotifications]: [
-    string[],
-    Function
-  ] = React.useState([]);
+  // const [notifications, setNotifications]: [
+  //   string[],
+  //   Function
+  // ] = React.useState([]);
   const [events, setEvents]: [Events, Function] = React.useState({
     connection: true,
     volume: 0,
@@ -28,15 +28,15 @@ function App() {
       {loggedIn ? (
         <>
           <Dashboard
-            notifications={notifications}
-            setNotifications={setNotifications}
+            // notifications={notifications}
+            // setNotifications={setNotifications}
             events={events}
             setEvents={setEvents}
           />
-          <Notifications
+          {/* <Notifications
             notifications={notifications}
             setNotifications={setNotifications}
-          />
+          /> */}
         </>
       ) : (
         <Login setLoggedIn={setLoggedIn} />

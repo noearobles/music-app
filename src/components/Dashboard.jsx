@@ -2,9 +2,11 @@ import React from "react";
 import { Slider, Switch, FormControl, Select, MenuItem } from "@mui/material";
 import Cards from "./Cards";
 import style from "../css/modules/App.module.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Dashboard(props) {
-  const { notifications, setNotifications, events, setEvents } = props;
+  const { events, setEvents } = props;
 
   const eventLabels = {
     connection: "Connection",
@@ -50,14 +52,10 @@ export default function Dashboard(props) {
   };
 
   function handleConnection() {
-    let alert;
-
     if (events.connection === true) {
-      alert = "Offline";
-      setNotifications([...notifications, alert]);
+      toast("Offline");
     } else if (events.connection === false) {
-      alert = "Online";
-      setNotifications([...notifications, alert]);
+      toast("Online");
     }
     setEvents({ ...events, connection: !events.connection });
   }
@@ -67,12 +65,11 @@ export default function Dashboard(props) {
     const audio = document.querySelector("audio");
 
     if (e.target.value === 80) {
-      alert =
-        "Listening to music at a high volume could cause long-term hearing loss.";
-      setNotifications([...notifications, alert]);
+      toast(
+        "Listening to music at a high volume could cause long-term hearing loss."
+      );
     } else if (e.target.value === 0) {
-      alert = "Audio is muted.";
-      setNotifications([...notifications, alert]);
+      toast("Audio is muted.");
     }
 
     audio.play();
@@ -84,17 +81,17 @@ export default function Dashboard(props) {
     let alert;
 
     if (e.target.value === "low") {
-      alert =
-        "Music qaulity is degraded. Increase quality if your connection allows it.";
-      setNotifications([...notifications, alert]);
+      alert = toast(
+        "Music qaulity is degraded. Increase quality if your connection allows it."
+      );
     } else if (e.target.value === "mid" || "high") {
-      alert = `Music qaulity is set to ${e.target.value}`;
-      setNotifications([...notifications, alert]);
+      toast(`Music qaulity is set to ${e.target.value}`);
     }
     setEvents({ ...events, quality: e.target.value });
   }
 
   return (
+    <>
       <section className={style.dashboard}>
         <audio>
           <source
@@ -118,5 +115,7 @@ export default function Dashboard(props) {
           eventMethods={eventMethods.quality}
         ></Cards>
       </section>
+      <ToastContainer position="bottom-right" />
+    </>
   );
 }
