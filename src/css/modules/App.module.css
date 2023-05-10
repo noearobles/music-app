@@ -1,21 +1,18 @@
-.nav {
-    top: 0px;
-    position: sticky;
-}
-
 .login {
     display: flex;
     justify-content: center;
     padding-top: 1rem;
 }
 
-.bar {
-    align-items: start;
+.tb {
+    background-color: #3f51b4;
+    position: relative;
 }
 
 .dashboard {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    text-align: center;
 }
 
 

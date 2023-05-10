@@ -115,7 +115,7 @@ export default function Dashboard(props) {
           eventMethods={eventMethods.quality}
         ></Cards>
       </section>
-      <ToastContainer position="bottom-right" />
+      <ToastContainer className={style.modal} position="bottom-right" />
     </>
   );
 }
