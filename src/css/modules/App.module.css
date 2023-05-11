@@ -16,6 +16,16 @@
 }
 
 
+
+.link {
+    color: #fff;
+}
+
+.link:hover {
+    color: #551A8B
+}
+
+
 @media screen and (max-width: 768px) {
     .dashboard {
         display: flex;

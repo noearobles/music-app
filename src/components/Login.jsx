@@ -3,7 +3,7 @@ import { Button, TextField } from "@mui/material";
 import style from "../css/modules/App.module.css";
 
 export default function Login(props) {
-  const { setLoggedIn } = props;
+  const { loggedIn, setLoggedIn } = props;
 
   const [credent, setCredent] = React.useState({
     username: "",
@@ -24,6 +24,10 @@ export default function Login(props) {
       alert("Invalid crendtials. username is username, password is password");
     }
   }
+
+  React.useEffect(() => {
+    console.log(loggedIn);
+  }, [loggedIn]);
 
   return (
     <div className={style.login}>
