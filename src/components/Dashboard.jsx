@@ -4,6 +4,7 @@ import Cards from "./Cards";
 import style from "../css/modules/App.module.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import musicFile from "/music/PushItToTheLimit.mp3";
 
 export default function Dashboard(props) {
   const { events, setEvents } = props;
@@ -93,12 +94,7 @@ export default function Dashboard(props) {
   return (
     <>
       <section className={style.dashboard}>
-        <audio>
-          <source
-            src="music/(Disc 2) 01 - Scarface (Push It To The Limit).mp3"
-            type="audio/mpeg"
-          ></source>
-        </audio>
+        <audio src={musicFile} type="audio/mpeg"></audio>
         <Cards
           eventLabels={eventLabels.connection}
           eventInfo={eventInfo.connection}

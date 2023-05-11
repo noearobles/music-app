@@ -9,7 +9,7 @@ export default function Router() {
   return (
     <>
       <Routes>
-        <Route index element={<App />} />
+        <Route path="/music-app" element={<App />} />
         <Route path="/login" element={<App />} />
         <Route path="*" element={<Error />}/>
       </Routes>
